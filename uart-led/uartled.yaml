@@ -1,0 +1,21 @@
+#%AML 1.0
+---
+title: SimpleUartLed
+description: LED Control via UART
+version: v1.0.0
+
+device:
+  protocol:
+    name: 'msgpack'
+    over:
+      protocol:
+        name: 'bincrc'
+        over:
+          interface:
+            name: 'uart'
+
+/led:
+  of: properties
+  is: [writeable]
+  type: bool
+  description: Amber LED
